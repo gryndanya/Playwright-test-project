@@ -27,7 +27,6 @@ test.describe('Orangehrmlive Tests', () => {
     test('should return Attendance page', async ({page}) => {
 
         const login = new LoginPage(page)
-        await login.gotoLoginPage()
         await login.login('Admin', 'admin123')
 
         await login.page.locator('.orangehrm-attendance-card-action').click();
