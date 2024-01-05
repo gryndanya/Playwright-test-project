@@ -7,37 +7,37 @@ test.beforeEach(async ({ page }) => {
 test.describe('Login', () => {
     test('Login Test', async ({page}) => {
 
-        const Login = new LoginPage(page)
-        await Login.login('Admin', 'admin123')
+        const login = new LoginPage(page)
+        await login.login('Admin', 'admin123')
 
-        expect(Login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
+        expect(login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
     });
 });
 
 test.describe('Recruitment', () => {
     test('should return Recruitment Test', async ({page}) => {
 
-        const Login = new LoginPage(page)
-        await Login.login('Admin', 'admin123')
+        const login = new LoginPage(page)
+        await login.login('Admin', 'admin123')
 
-        await Login.page.click('span:has-text("Recruitment")');
+        await login.page.click('span:has-text("Recruitment")');
 
-        expect(Login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
+        expect(login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
     });
 });
 
 test.describe('Dashboard', () => {
     test('should return Attendance page', async ({page}) => {
 
-        const Login = new LoginPage(page)
-        await Login.gotoLoginPage()
-        await Login.login('Admin', 'admin123')
+        const login = new LoginPage(page)
+        await login.gotoLoginPage()
+        await login.login('Admin', 'admin123')
 
-        await Login.page.locator('.orangehrm-attendance-card-action').click();
+        await login.page.locator('.orangehrm-attendance-card-action').click();
 
-        await Login.page.click('li:has-text("Timesheets")');
-        await Login.page.click('a:has-text("My Timesheets")');
+        await login.page.click('li:has-text("Timesheets")');
+        await login.page.click('a:has-text("My Timesheets")');
 
-        expect(Login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/time/viewMyTimesheet')
+        expect(login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/time/viewMyTimesheet')
     });
 });
