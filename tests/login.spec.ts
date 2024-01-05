@@ -29,7 +29,7 @@ test.describe('Orangehrmlive Tests', () => {
         const login = new LoginPage(page)
         await login.login('Admin', 'admin123')
 
-        await login.page.locator('.orangehrm-attendance-card-action').click();
+        await login.clickByLocator('.orangehrm-attendance-card-action');
 
         await login.clickBySelector('li:has-text("Timesheets")');
         await login.clickBySelector('a:has-text("My Timesheets")');

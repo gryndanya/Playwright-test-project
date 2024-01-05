@@ -15,7 +15,10 @@ exports.LoginPage = class LoginPage {
     }
 
     async clickBySelector(selector){
-        await this.page.clickBySelector(selector)
+        await this.page.click(selector)
     }
 
+    async clickByLocator(selector){
+        await this.page.locator(selector).click()
+    }
 }
