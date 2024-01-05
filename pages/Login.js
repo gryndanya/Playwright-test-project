@@ -14,4 +14,8 @@ exports.LoginPage = class LoginPage {
         await this.login_button.click()
     }
 
+    async clickBySelector(selector){
+        await this.page.clickBySelector(selector)
+    }
+
 }
