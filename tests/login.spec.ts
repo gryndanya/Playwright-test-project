@@ -9,7 +9,6 @@ test.describe('Login', () => {
 
         const Login = new LoginPage(page)
         await Login.login('Admin', 'admin123')
-        await Login.page.waitForTimeout(3000);
 
         expect(Login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
     });
@@ -20,10 +19,8 @@ test.describe('Recruitment', () => {
 
         const Login = new LoginPage(page)
         await Login.login('Admin', 'admin123')
-        await Login.page.waitForTimeout(3000);
 
         await Login.page.click('span:has-text("Recruitment")');
-        await Login.page.waitForTimeout(2000);
 
         expect(Login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
     });
@@ -35,15 +32,11 @@ test.describe('Dashboard', () => {
         const Login = new LoginPage(page)
         await Login.gotoLoginPage()
         await Login.login('Admin', 'admin123')
-        await Login.page.waitForTimeout(2000);
 
         await Login.page.locator('.orangehrm-attendance-card-action').click();
-        await Login.page.waitForTimeout(2000);
 
         await Login.page.click('li:has-text("Timesheets")');
-        await Login.page.waitForTimeout(1000);
         await Login.page.click('a:has-text("My Timesheets")');
-        await Login.page.waitForTimeout(1000);
 
         expect(Login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/time/viewMyTimesheet')
     });
