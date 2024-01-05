@@ -108,7 +108,7 @@ test.describe('Mark all as completed', () => {
     const firstTodo = page.getByTestId('todo-item').nth(0);
     await firstTodo.getByRole('checkbox').uncheck();
 
-    // Reuse toggleAll locator and make sure its not checked.
+    // Reuse toggleAll locator and make sure it's not checked.
     await expect(toggleAll).not.toBeChecked();
 
     await firstTodo.getByRole('checkbox').check();
