@@ -1,10 +1,11 @@
 import {expect, test} from '@playwright/test';
-import {LoginPage} from '../pages/login.js';
+import {LoginPage} from '../pages/Login.js';
 
-test.beforeEach(async ({ page }) => {
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-});
-test.describe('Login', () => {
+test.describe('Orangehrmlive Tests', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto('/');
+    });
+
     test('Login Test', async ({page}) => {
 
         const login = new LoginPage(page)
@@ -12,9 +13,7 @@ test.describe('Login', () => {
 
         expect(login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
     });
-});
 
-test.describe('Recruitment', () => {
     test('should return Recruitment Test', async ({page}) => {
 
         const login = new LoginPage(page)
@@ -24,9 +23,7 @@ test.describe('Recruitment', () => {
 
         expect(login.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
     });
-});
 
-test.describe('Dashboard', () => {
     test('should return Attendance page', async ({page}) => {
 
         const login = new LoginPage(page)

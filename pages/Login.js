@@ -7,9 +7,6 @@ exports.LoginPage = class LoginPage {
         this.login_button = page.getByRole('button', { name: 'Login' })
     }
 
-    async gotoLoginPage() {
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-    }
     async login(username, password){
 
         await this.username_field.fill(username);
